@@ -7,7 +7,7 @@ export const app = express();
 
 
 app.use(cors({
-  origin:"http://localhost:3000",
+  origin:"https://leads-system-lyart.vercel.app",
    credentials: true,
 }))
 //handles json format req
