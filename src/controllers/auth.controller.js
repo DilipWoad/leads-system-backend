@@ -94,15 +94,15 @@ const loginUser = async (req, res) => {
     console.log(`{login : ${email},password : ${password}}`);
     const AccessTokenOptions = {
       httpOnly: true,
-      secure: true,
-      sameSite: "Strict",
+      secure: process.env.NODE_ENV,
+      sameSite: "None",
       // sameSite: "Strict",
       maxAge: 24 * 60 * 60 * 1000,
     };
     const RefreshTokenOptions = {
       httpOnly: true,
-      secure: true,
-      sameSite: "Strict",
+      secure: process.env.NODE_ENV,
+      sameSite: "None",
       // sameSite: "Strict",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     };
