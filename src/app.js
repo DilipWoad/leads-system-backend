@@ -2,13 +2,13 @@
 import express from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
-
+import { ORIGIN } from "./constant.js";
 export const app = express();
 
 
 app.use(cors({
-  origin:"https://leads-system-lyart.vercel.app",
-   credentials: true,
+  origin:ORIGIN,
+  credentials: true,
 }))
 //handles json format req
 app.use(express.json({ limit: "20kb" }));

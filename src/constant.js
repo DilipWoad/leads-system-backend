@@ -21,4 +21,7 @@ const generateRefreshToken = async (id) => {
   );
 };
 
+export const ORIGIN="https://leads-system-lyart.vercel.app"
+// export const ORIGIN="http://localhost:3000"
 export { generateAccessToken, generateRefreshToken };
+

@@ -147,7 +147,7 @@ const logoutUser = async (req, res) => {
     // then clear cookie
     //also remove refresh token from the db
     const user = req.user;
-    console.log(user)
+    console.log(user);
     if (!user) {
       return res.status(401).json({
         message: "Invalid api call for logout ,make sure you are logged in.",
@@ -165,12 +165,10 @@ const logoutUser = async (req, res) => {
       },
     });
     if (!userRefresh) {
-      return res
-        .status(500)
-        .json({
-          message: "Something went wrong while removing RefreshToken.",
-          success: false,
-        });
+      return res.status(500).json({
+        message: "Something went wrong while removing RefreshToken.",
+        success: false,
+      });
     }
     //options for cookie
     const options = {
@@ -192,4 +190,4 @@ const logoutUser = async (req, res) => {
     });
   }
 };
-export { loginUser, registerUser,logoutUser };
+export { loginUser, registerUser, logoutUser };
